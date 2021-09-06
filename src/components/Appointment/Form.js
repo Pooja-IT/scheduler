@@ -16,15 +16,7 @@ export default function Form(props) {
     reset()
     props.onCancel()
   }
-  function validate() {
-    // if (name === "") {
-    //   setError("Student name cannot be blank")
-    //   return
-    // }
-    // if (interviewer === null) {
-    //   setError("Please choose an interviewer")
-    //   return
-    // }
+  function save() {
     setError("")
     props.onSave(name, interviewer)
   }
@@ -53,9 +45,21 @@ export default function Form(props) {
   <section className="appointment__card-right">
     <section className="appointment__actions">
       <Button danger onClick={cancel}>Cancel</Button>
-      <Button confirm onSubmit={event => event.preventDefault()} onClick={validate}>Save</Button>
+      <Button confirm onSubmit={event => event.preventDefault()} onClick={save}>Save</Button>
     </section>
   </section>
 </main>
   );
 }
+
+
+
+
+// if (name === "") {
+    //   setError("Student name cannot be blank")
+    //   return
+    // }
+    // if (interviewer === null) {
+    //   setError("Please choose an interviewer")
+    //   return
+    // }
