@@ -29,16 +29,3 @@ export function getInterviewersForDay(state, day) {
   });
   return filteredInterviewers;
 };
-
-// export function getInterviewersForDay(state, day) {
-//   const dayInterviewers =[];
-//   const foundDay = state.days.find((el) => el.name === day);
-
-//   if(!foundDay || foundDay.interviewers.length === 0) {
-//     return dayInterviewers;
-//   }
-//   for(const int of foundDay.interviewers) {
-//     dayInterviewers.push(state.interviewers[int]);
-//   }
-//   return dayInterviewers;
-//   };
