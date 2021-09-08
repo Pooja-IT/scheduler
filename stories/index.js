@@ -12,7 +12,6 @@ import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
 import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
-import index from "components/Appointment/index";
 
 import Appointment from "components/Appointment";
 import Header from "components/Appointment/Header";
@@ -22,12 +21,6 @@ import Confirm from "components/Appointment/Confirm";
 import Status from "components/Appointment/Status";
 import Error from "components/Appointment/Error";
 import Form from "components/Appointment/Form";
-
-
-
-
-
-
 
 
 storiesOf("Button", module)
@@ -147,7 +140,7 @@ storiesOf("InterviewerList", module)
     <InterviewerList
       interviewers={interviewers}
       value={3}
-      onChange={action("onChange")}
+      onChange={action("setInterviewer")}
       />
   ));
 
