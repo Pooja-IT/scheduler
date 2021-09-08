@@ -7,11 +7,9 @@ import Empty from "components/Appointment/Empty";
 import Form from "components/Appointment/Form";
 import Status from "components/Appointment/Status";
 import Confirm from "components/Appointment/Confirm";
-
+import Error from "components/Appointment/Error";
 
 import useVisualMode from 'hooks/useVisualMode';
-
-
 
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
@@ -20,8 +18,9 @@ export default function Appointment(props) {
   const SAVING = "SAVING";
   const DELETING = "DELETING";
   const CONFIRM = "CONFIRM";
-
-
+  const EDIT = "EDIT";
+  const ERROR_SAVE = "ERROR_SAVE";
+  const ERROR_DELETE = "ERROR_DELETE";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -46,19 +45,27 @@ export default function Appointment(props) {
       };
       props.bookInterview(props.id, interview)
         .then(() => transition(SHOW))
+        .catch(() => transition(ERROR_SAVE, true))
     }
   };
 
-  function cancel(name, interviewer) {
+  
+
+  function cancel() {
     console.log("Hey I am Cancelling");
     if (mode === CONFIRM) {
       transition(DELETING, true)
       props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE, true))
     } else {
         transition(CONFIRM);      
       }
   };
+
+  function edit() {
+    transition(EDIT)
+  }
 
   return (
     <article className="appointment">
@@ -69,6 +76,7 @@ export default function Appointment(props) {
         student={props.interview.student}
         interviewer={props.interview.interviewer}
         onDelete={cancel}
+        onEdit={edit}
       />
     )}
     {mode === CREATE && (
@@ -82,12 +90,35 @@ export default function Appointment(props) {
       )}
       {mode === SAVING && <Status message="Saving" />}
       {mode === DELETING && <Status message="Deleting" />}
-      {mode === CONFIRM &&
-      <Confirm 
-      onCancel={back}
-      onConfirm={cancel}
-      message="Are you sure you would like to delete?" 
-    />}
+      {mode === CONFIRM && (
+        <Confirm 
+          onCancel={back}
+          onConfirm={cancel}
+          message="Are you sure you would like to delete?" 
+        />
+      )}
+      {mode === EDIT && (
+        <Form
+        name={props.name ? props.name : props.interview.student}
+        value={props.value}
+        interviewers={props.interviewers}
+        onSave={save}
+        onCancel={back}
+        />
+      )}
+      {mode === ERROR_SAVE && (
+        <Error
+        message="Could not create appointment"
+        onClose={back}
+        />
+      )}
+      {mode === ERROR_DELETE && (
+        <Error
+        message="Could not cancel appointment"
+        onClose={back}
+        />
+      )}
+
     </article>
 );
 }
