@@ -57,5 +57,3 @@ export default function Form(props) {
 </main>
   );
 }
-
-// onSubmit={event => event.preventDefault()}
