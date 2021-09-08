@@ -18,18 +18,18 @@ The application makes API requests to load and persist data. We do not lose data
 
 ## Final Product
 
-## New appointment booking
-!["Screenshot of create New appointment"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Create%20New%20Appointment.png?raw=true)
 ## Daily Appointments View
 !["Screenshot of daily appointments view"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Daily%20appointments%20view.png?raw=true)
-## Delete Status Indicator
-!["Screenshot of delete status indicator"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Delete%20Status%20indicator.png?raw=true)
+## New appointment booking
+!["Screenshot of create New appointment"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Create%20New%20Appointment.png?raw=true)
 ## Error for Student Name
 !["Screenshot of error for student name"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Error%20for%20student%20name.png?raw=true)
-## Interview Confirmation
-!["Screenshot of interview confirmation"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Interview%20Confirmation.png?raw=true)
 ## Saving Indicator
 !["Screenshot of saving indicator"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Saving%20indicator.png?raw=true)
+## Interview Confirmation
+!["Screenshot of interview confirmation"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Interview%20Confirmation.png?raw=true)
+## Delete Status Indicator
+!["Screenshot of delete status indicator"](https://github.com/Pooja-IT/scheduler/blob/master/docs/Delete%20Status%20indicator.png?raw=true)
 ## Handling Error
 !["Screenshot of handling error"](https://github.com/Pooja-IT/scheduler/blob/master/docs/handling%20error.png?raw=true)
 
