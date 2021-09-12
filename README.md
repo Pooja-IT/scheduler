@@ -36,9 +36,11 @@ A React application that allows users book and cancel interviews.
 
 
 
-## Setup
+## Installation
 
-Install dependencies with `npm install`.
+ ```sh
+npm install
+```
 
 ## Running Webpack Development Server
 
@@ -57,3 +59,23 @@ npm test
 ```sh
 npm run storybook
 ```
+## Dependencies
+
+* Axios
+* Classnames
+* Normalize.css
+* React
+* React-dom
+* React-scripts
+* Babel/core
+* Storybook/addon-actions
+* Storybook/addon-backgrounds
+* Storybook/addon-links
+* Storybook/addons
+* Storybook/react
+* Testing-library/jest-dom
+* Testing-library/react
+* Testing-library/react-hooks
+* Babel-loader
+* Node-sass
+* Prop-types
