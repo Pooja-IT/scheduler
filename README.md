@@ -2,8 +2,8 @@
 A React application that allows users book and cancel interviews.
 
 ## Project Features
-Interviews can be booked between Monday and Friday.
-A user can switch between weekdays.
+*Interviews can be booked between Monday and Friday.
+*A user can switch between weekdays.
 A user can book an interview in an empty appointment slot.
 Interviews are booked by typing in a student name and clicking on an interviewer from a list of available interviewers.
 A user can cancel an existing interview.
