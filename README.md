@@ -79,3 +79,4 @@ npm run storybook
 * Babel-loader
 * Node-sass
 * Prop-types
+* react-test-renderer
