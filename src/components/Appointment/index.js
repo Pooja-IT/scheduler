@@ -52,7 +52,7 @@ export default function Appointment(props) {
   }
   function cancel() {
     if (mode === CONFIRM) {
-      transition(DELETING);
+      transition(DELETING, true);
       axios
         .delete(`/api/appointments/${props.id}`, {})
         .then(response => {
