@@ -3,16 +3,15 @@ export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
    
-  
   // allows to transition to a new mode
   const transition = (nextMode, replace = false) => {
     setMode(nextMode)
-    if (replace) {
-      setHistory(prev => [prev[0]])
+    if (!replace) {
+      const newHistory = [...history];
+      newHistory.push(nextMode);
+      setHistory(newHistory);
     }
-    setHistory(prev => [...prev, nextMode])
   };
-
   // allows to call back to return to previous mode
   const back = () => {
     let newHistory = [...history];
